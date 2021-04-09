@@ -257,3 +257,27 @@ def airQuality(person, AQI, pollen):
         return safetyCheck(person.AQIsensitive, person.PollenSensitive, 100, 150, 2.4, 4.8, AQI, pollen)
     elif person.degreeOfSensitivity == 4:
         return safetyCheck(person.AQIsensitive, person.PollenSensitive, 50, 100, 0, 2.4, AQI, pollen)
+
+def main():
+    print('')
+    print('')
+    print('')
+    print('------------------------------')
+    print('!!!!!!!!Asthma Travels!!!!!!!!')
+    print('------------------------------')
+    print('---------------------CSci 154-')
+    print('------------------------------')
+    print('------------------------------')
+    print('')
+    print('')
+    print('Checking route!')
+    test()
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+
+
+main()
