@@ -29,11 +29,17 @@ None
 
 <!-- Contributions -->
 ## Contributions
+
 Kyle Kilcrease:
 
 Nav Sanya Anand:
 
 Eric Smrkovsky:
+    - Researched data sets and API's
+    - Created ReadMe File
+        * Used HTML Template
+    - Python Programming
+        * User Interface
 
 Israel Perez:
 
@@ -42,8 +48,11 @@ Israel Perez:
 
 <!-- #Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email -->
 Nav Sanya Anand - (NavSanya@mail.fresnostate.edu) - email
+
 Kyle Kilcrease - (viatrix@mail.fresnostate.edu) - email
+
 Eric Smrkovsky - (EricSmrkovsky@mail.fresnostate.edu) - email
+
 Israel Perez - (iperez17@mail.fresnostate.edu) - email
 
 
