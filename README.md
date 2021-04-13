@@ -5,7 +5,7 @@
     <img src="https://github.com/NavSanya/AsthmaTravels/blob/main/Images/Logo1.png" alt="Logo" width="280" height="280">
   </a>
 
-  <h4 align="center" style="color:black;font-size:40px;" >Asthma Travels</h4>
+  <h1 style="font-size:300%;" align="center" >Asthma Travels</h1>
 
   <p align="center">
      A tool to find the best possible path to travel (by road) for asthma patients. The cost of each path is considered by three variables: Distance, Air Quality, and Pollen Count.
