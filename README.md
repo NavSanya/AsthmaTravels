@@ -34,14 +34,15 @@ Kyle Kilcrease:
 
 Nav Sanya Anand:
 
-Eric Smrkovsky:
-    - Researched data sets and API's
-    - Created ReadMe File
-        * Used HTML Template
-    - Python Programming
-        * User Interface
+Eric Smrkovsky:  
+  - Researched data sets and API's  
+  - Created ReadMe File  
+    * Used HTML
+  - Python Programming
+    * Created user interface
 
 Israel Perez:
+
 
 <!-- CONTACT -->
 ## Contact
@@ -55,10 +56,11 @@ Eric Smrkovsky - (EricSmrkovsky@mail.fresnostate.edu) - email
 
 Israel Perez - (iperez17@mail.fresnostate.edu) - email
 
+## Links
 
-Project Link: [https://github.com/NavSanya/AsthmaTravels](https://github.com/NavSanya/AsthmaTravels)
-
-
+Project Link: [Asthma Travels Github](https://github.com/NavSanya/AsthmaTravels)  
+Report: []()
+Presentation: [Asthma Travels Presentation](https://www.canva.com/design/DAEbaEi3rvA/ylsGCQ1serir8xoDschQmA/edit)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
