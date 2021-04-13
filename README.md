@@ -1,32 +1,4 @@
-# AsthmaTravels
-Class Patient....
-Cost formula 2*(Sensitive)+1*(non sensitive)+2*(distance)
-Aqi/pollen=Difference b/w threshhold and actual
-Best Shortest path using dijkstra algorithm
-
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, Asthma Travels, project_description
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
+[![Contributors]][contributors-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -35,7 +7,7 @@ Best Shortest path using dijkstra algorithm
     <img src="https://github.com/NavSanya/AsthmaTravels/blob/main/Images/Logo1.png" alt="Logo" width="280" height="280">
   </a>
 
-  <h3 align="center">Asthma Travels</h3>
+  <h15 align="center">Asthma Travels</h15>
 
   <p align="center">
      A tool to find the best possible path to travel (by road) for asthma patients. The cost of each path is considered by three variables: Distance, Air Quality, and Pollen Count.
@@ -158,9 +130,13 @@ None
 
 <!-- #Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email -->
 Nav Sanya Anand - (NavSanya@mail.fresnostate.edu) - email
+
 Kyle Kilcrease - (viatrix@mail.fresnostate.edu) - email
+
 Eric Smrkovsky - (EricSmrkovsky@mail.fresnostate.edu) - email
+
 Israel Perez - (iperez17@mail.fresnostate.edu) - email
+
 
 Project Link: [https://github.com/NavSanya/AsthmaTravels](https://github.com/NavSanya/AsthmaTravels)
 
@@ -169,8 +145,8 @@ Project Link: [https://github.com/NavSanya/AsthmaTravels](https://github.com/Nav
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* California State University Fresno, Computer Science Department [](http://www.fresnostate.edu/csm/csci/)
-* Dr. Athanasios Aris (Thanos) Panagopoulos [](http://www.apanagopoulos.com/)
+* California State University Fresno, Computer Science Department [http://www.fresnostate.edu/csm/csci/]()
+* Dr. Athanasios Aris (Thanos) Panagopoulos [http://www.apanagopoulos.com/]()
 <!-- * []() -->
 
 
