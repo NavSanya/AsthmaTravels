@@ -47,7 +47,7 @@ Best Shortest path using dijkstra algorithm
 
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
+<!-- <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li>
@@ -65,14 +65,14 @@ Best Shortest path using dijkstra algorithm
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contributing">Contributions</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
-
+ -->
 
 <!-- ABOUT THE PROJECT -->
 <!-- ## About The Project
@@ -88,7 +88,6 @@ Here's a blank template to get started:
 
 * Python3[]()
 * GitHub[]()
-#* []()
 
 
 
@@ -150,16 +149,19 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 None
-#Distributed under the MIT License. See `LICENSE` for more information.
+<!-- Distributed under the MIT License. See `LICENSE` for more information. -->
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-#Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
+<!-- #Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email -->
+Nav Sanya Anand - (NavSanya@mail.fresnostate.edu) - email
+Kyle Kilcrease - (viatrix@mail.fresnostate.edu) - email
 Eric Smrkovsky - (EricSmrkovsky@mail.fresnostate.edu) - email
+Israel Perez - (iperez17@mail.fresnostate.edu) - email
+
 Project Link: [https://github.com/NavSanya/AsthmaTravels](https://github.com/NavSanya/AsthmaTravels)
 
 
@@ -167,9 +169,9 @@ Project Link: [https://github.com/NavSanya/AsthmaTravels](https://github.com/Nav
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* California State University Fresno, Computer Science Department [](http://www.fresnostate.edu/csm/csci/)
+* Dr. Athanasios Aris (Thanos) Panagopoulos [](http://www.apanagopoulos.com/)
+<!-- * []() -->
 
 
 
