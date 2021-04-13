@@ -13,7 +13,7 @@ Best Shortest path using dijkstra algorithm
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
+*** github_username, repo_name, twitter_handle, email, Asthma Travels, project_description
 -->
 
 
@@ -27,25 +27,18 @@ Best Shortest path using dijkstra algorithm
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/NavSanya/AsthmaTravels">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">Asthma Travels</h3>
 
   <p align="center">
-    project_description
+     A tool to find the best possible path to travel (by road) for asthma patients. The cost of each path is considered by three variables: Distance, Air Quality, and Pollen Count.
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -95,12 +88,12 @@ Best Shortest path using dijkstra algorithm
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+`github_username`, `repo_name`, `twitter_handle`, `email`, `Asthma Travels`, ` A tool to find the best possible path to travel (by road) for asthma patients. The cost of each path is considered by three variables: Distance, Air Quality, and Pollen Count.`
 
 
 ### Built With
 
-* []()
+* [](Python3)
 * []()
 * []()
 
@@ -202,4 +195,3 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
-
