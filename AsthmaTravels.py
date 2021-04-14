@@ -13,7 +13,7 @@ places = {1:"San Diego",
     9:"San Jose",
     10:"Sacramento",
     11:"Oakland",
-    12:"San Fransisco",
+    12:"San Francisco",
     13:"Napa",
     14:"Eureka",
     15:"Redding"}
@@ -62,11 +62,11 @@ class Graph:
            "San Luis Obispo":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Monterey":141, "San Jose":185, "Santa Barbara":95},
            "Fresno":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Sacramento":169,"Bakersfield":109},
            "Monterey":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"San Jose":73, "San Luis Obispo":141},
-           "San Jose":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Oakland":41, "San Fransisco":48, "Monterey":73, "San Luis Obispo":185},
+           "San Jose":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Oakland":41, "San Francisco":48, "Monterey":73, "San Luis Obispo":185},
            "Sacramento":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":62, "Redding":160, "Fresno":169},
            "Oakland":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":42, "San Jose":41},
-           "San Fransisco":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":52, "San Jose":48},
-           "Napa":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Eureka":252, "Sacramento":62, "Oakland":42, "San Fransisco":52},
+           "San Francisco":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":52, "San Jose":48},
+           "Napa":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Eureka":252, "Sacramento":62, "Oakland":42, "San Francisco":52},
            "Eureka":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Redding":147, "Napa":252},
            "Redding":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Eureka":147, "Sacramento":160}}
 
@@ -118,7 +118,7 @@ def search(person, cities, source, dest):
        "San Jose":False,
        "Sacramento":False,
        "Oakland":False,
-       "San Fransisco":False,
+       "San Francisco":False,
        "Napa":False,
        "Eureka":False,
        "Redding":False}
@@ -135,7 +135,7 @@ def search(person, cities, source, dest):
        "San Jose":0,
        "Sacramento":0,
        "Oakland":0,
-       "San Fransisco":0,
+       "San Francisco":0,
        "Napa":0,
        "Eureka":0,
        "Redding":0}
@@ -177,7 +177,7 @@ def traverse(cities, source, dest, cost):
        "San Jose":False,
        "Sacramento":False,
        "Oakland":False,
-       "San Fransisco":False,
+       "San Francisco":False,
        "Napa":False,
        "Eureka":False,
        "Redding":False}
@@ -264,13 +264,12 @@ class AsthmaTrip():
     def __init__ (self):
         self.person = self.getPatient()
         self.g = Graph()
-        self.startLoc = places[random.randrange(1, 15)]
-        self.endLoc = places[random.randrange(1, 15)]
+        self.startLoc, self.endLoc = self.getLocations()
         self.path = self.getPath()
         self.showResults()
         
     def showResults(self):
-         #Give feedback about what's been generated and what happened
+        """ Give feedback about what's been generated and what happened """
         print('\n\nHere are the results for', self.person.name, '!!\n\n' ) 
         print(self.person.name + " wants to drive from " + self.startLoc + " to " + self.endLoc + ".\n They have a " + sens[self.person.degreeOfSensitivity] + " sensitivity to allergens.")
         if self.person.AQIsensitive and self.person.PollenSensitive:
@@ -300,7 +299,16 @@ class AsthmaTrip():
         """ Calls search to find the optimal route """
         return search(self.person, self.g.G, self.startLoc, self.endLoc)
         
-    #def getLocations(self):
+    def getLocations(self):
+        """ Get user input for start and end locations """
+    
+        for i in places:
+            print('(', i, ') ', places[i])
+        
+        start = int(input('Choose departure city:  '))
+        end = int(input('Choose destination city:  '))
+
+        return places[start], places[end]
 
     def getPatient(self):
         """ Returns tha patients information
