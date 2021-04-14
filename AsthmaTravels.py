@@ -50,7 +50,7 @@ class Patient:
         print("degree of senstitivity"+degreeOfSenstivity)
         print("Sensitive to AQI"+ AQIsensitive)
         print("Sensitive to Pollen Count"+PollenSensitive)
-
+    
 class Graph:
     def __init__(self):
         random.seed()
@@ -70,6 +70,7 @@ class Graph:
            "Eureka":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Redding":147, "Napa":252},
            "Redding":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Eureka":147, "Sacramento":160}}
 
+#runs program with random inputs for locations and patient info
 def test():
     #Setup some random values
     random.seed()
@@ -258,10 +259,83 @@ def airQuality(person, AQI, pollen):
     elif person.degreeOfSensitivity == 4:
         return safetyCheck(person.AQIsensitive, person.PollenSensitive, 50, 100, 0, 2.4, AQI, pollen)
 
+class AsthmaTrip():
+    """ Initializes values with user input and finds best path """
+    def __init__ (self):
+        self.person = self.getPatient()
+        self.g = Graph()
+        self.startLoc = places[random.randrange(1, 15)]
+        self.endLoc = places[random.randrange(1, 15)]
+        self.path = self.getPath()
+        self.showResults()
+        
+    def showResults(self):
+         #Give feedback about what's been generated and what happened
+        print('\n\nHere are the results for', self.person.name, '!!\n\n' ) 
+        print(self.person.name + " wants to drive from " + self.startLoc + " to " + self.endLoc + ".\n They have a " + sens[self.person.degreeOfSensitivity] + " sensitivity to allergens.")
+        if self.person.AQIsensitive and self.person.PollenSensitive:
+            print(self.person.name + " is particularly sensitive to pollen and AQI.")
+        elif self.person.AQIsensitive:
+            print(self.person.name + " is particularly sensitive to AQI.")
+        elif self.person.PollenSensitive:
+            print(self.person.name + " is particularly sensitive to pollen.")
+        print("\n\nThe path they should take to minimize allergen exposure is:")
+        print(self.path)
+        print('\n\nTRIP DETAILS')
+
+        #Loop through the cities in the path and give detailed information about air quality
+        for city in self.path:
+            safety = airQuality(self.person, self.g.G[city]["AQI"], self.g.G[city]["Pollen"])
+            if safety == 0:
+                print("The air quality in " + city + " is just fine today.")
+            elif safety == -1:
+                print("The pollen count in " + city + " is notably high today at a level of " + str(self.g.G[city]["Pollen"]) + ".")
+            elif safety == -2:
+                print("The AQI in " + city + " is notably high today at a level of " + str(self.g.G[city]["AQI"]) + ".")
+            elif safety == -3:
+                print("The AQI and pollen counts in " + city + " are notably high today at levels of " + str(self.g.G[city]["AQI"]) + " and " + str(self.g.G[city]["Pollen"]) + " respectively.")
+
+
+    def getPath(self):
+        """ Calls search to find the optimal route """
+        return search(self.person, self.g.G, self.startLoc, self.endLoc)
+        
+    #def getLocations(self):
+
+    def getPatient(self):
+        """ Returns tha patients information
+        """
+        #get name
+        name = input('\nEnter name of person: ')
+        
+        #get asthma condition
+        print('How severe is the asthma condition of', name, '? ')
+        for i in sens:
+            print('(', i, ') ', sens[i])
+        degreeOfSensitivity = int(input())
+        
+        #get aqi sensitivity 
+        AQI = input('Are they sensitive to bad air quality? (Y/N) ')
+        if (AQI == 'Y' or AQI == 'y'):
+            AQIsensitive = True
+        else:
+            AQIsensitive = False
+
+        #get pollen sensitivity
+        Pollen = input('Are they sensitive to high pollen counts? (Y/N) ')
+        if (AQI == 'Y' or AQI == 'y'):
+            PollenSensitive = True
+        else:
+            PollenSensitive = False
+
+        return Patient(degreeOfSensitivity, AQIsensitive, PollenSensitive, name)
+
 def main():
     print('')
     print('')
     print('')
+    print('------------------------------')
+    print('------------------------------')
     print('------------------------------')
     print('!!!!!!!!Asthma Travels!!!!!!!!')
     print('------------------------------')
@@ -270,8 +344,9 @@ def main():
     print('------------------------------')
     print('')
     print('')
-    print('Checking route!')
-    test()
+    print('I need to get some information from you')
+    print('before we can get you on your way...')
+    myTrip = AsthmaTrip()
     print('')
     print('')
     print('')
