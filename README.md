@@ -10,7 +10,7 @@
   <p align="center">
      A tool to find the best possible path to travel (by road) for asthma patients. The cost of each path is considered by three variables: Distance, Air Quality, and Pollen Count.
     <br />
-    <a href="https://github.com/NavSanya/AsthmaTravels"><strong>View Demo</a>
+    <a href="https://www.youtube.com/embed/vo-diiCT6Ag"><strong>View Demo</a>
   </p>
 </p>
 
