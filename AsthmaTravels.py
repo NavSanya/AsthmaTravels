@@ -166,6 +166,11 @@ def search(person, cities, source, dest):
     return traverse(cities, source, dest, cost)
 
 def traverse(cities, source, dest, cost):
+    '''
+    Function header: traverse(cities, source, dest, cost)
+    Parameters: the graph, start location(int), end location(int) and the cost of all edges of the graph
+    Returns the shortest path from source to destination according to the cost
+    '''
     visited = {"San Diego":False,
        "Palm Springs":False,
        "Los Angeles":False,
@@ -205,9 +210,15 @@ def traverse(cities, source, dest, cost):
             visited[minkey] = True
         
     return path
+traverse.__doc__
 
 #This function simply checks if the given AQI and pollen counts are below the given thresholds depending on sensitivity
 def safetyCheck(sensitiveAQI, sensitivePollen, thresholdAQILow, thresholdAQIHigh, thresholdPollenLow, thresholdPollenHigh, AQI, pollen):
+    '''
+    Function header: safetyCheck(sensitiveAQI, sensitivePollen, thresholdAQILow, thresholdAQIHigh, thresholdPollenLow, thresholdPollenHigh, AQI, pollen)
+    Parameters:  sensitiveAQI(true/false), sensitivePollen(true/false), thresholdAQILow(int), thresholdAQIHigh(int), thresholdPollenLow(int), thresholdPollenHigh(int)
+    This function simply checks if the given AQI and pollen counts are below the given thresholds depending on sensitivity
+    '''
     if sensitiveAQI and sensitivePollen:
         if AQI > thresholdAQILow and pollen > thresholdPollenLow:
             return -3
@@ -244,6 +255,7 @@ def safetyCheck(sensitiveAQI, sensitivePollen, thresholdAQILow, thresholdAQIHigh
             return -1
         else:
             return 0
+safetyCheck.__doc__
 
 def airQuality(person, AQI, pollen):
     #If the pollen or AQI counts are above these levels, the air isn't safe regardless of sensitivity
