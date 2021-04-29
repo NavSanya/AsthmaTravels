@@ -33,7 +33,11 @@ None
 Kyle Kilcrease:
 
 Nav Sanya Anand:
-
+  - Researched and setup the constraints and variables
+  - Finalize the Paper
+  - Python Programming
+    * Set up the graph 
+  - Managing and proving structure to the team
 Eric Smrkovsky:  
   - Researched data sets and API's  
   - Created ReadMe File  
