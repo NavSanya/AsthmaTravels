@@ -38,6 +38,7 @@ Nav Sanya Anand:
   - Python Programming
     * Set up the graph 
   - Managing and proving structure to the team
+
 Eric Smrkovsky:  
   - Researched data sets and API's  
   - Created ReadMe File  
