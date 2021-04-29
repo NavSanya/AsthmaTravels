@@ -37,6 +37,7 @@ Nav Sanya Anand:
   - Finalize the Paper
   - Python Programming
     * Set up the graph 
+    * Add Docsign
   - Managing and proving structure to the team
 
 Eric Smrkovsky:  
