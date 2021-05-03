@@ -32,6 +32,9 @@ MIT License
 
 Kyle Kilcrease:
   - Python Programming
+    * Research and implement the shortest path
+    * Examined possible future goals for the project
+  - Finalised the code  
 
 Nav Sanya Anand:
   - Researched and setup the constraints and variables
@@ -52,7 +55,7 @@ Eric Smrkovsky:
 
 Israel Perez:
   - Python Programming
-    * API
+    * Implemented API
 
 
 <!-- CONTACT -->
