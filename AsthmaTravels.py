@@ -4,6 +4,8 @@ import random
 import requests
 from datetime import datetime
 from geopy.geocoders import Nominatim
+from copy import deepcopy
+
 
 # Should be hidden
 open_weather_key = 'debe00cc9953a4e09636a2e3e393929a'
@@ -56,7 +58,24 @@ class Patient:
         print("degree of senstitivity"+degreeOfSenstivity)
         print("Sensitive to AQI"+ AQIsensitive)
         print("Sensitive to Pollen Count"+PollenSensitive)
+
+class Node:
+    pass
+    #AQI, Pollen, etc
+
+class Edge:
+    pass
+    #Distance
+    #AQI average
+    #Pollen average
+    #(Node A, Node B)
     
+class Graph2:
+    pass
+    #self.nodes[0..n] = Node()
+    #self.edges[0..n] = Edge()
+    #collection of nodes and edges
+
 class Graph:
     def __init__(self):
         random.seed()
@@ -162,6 +181,13 @@ def search(person, cities, source, dest):
        "Eureka":0,
        "Redding":0}
 
+    c = deepcopy(cities)
+    for key1, value1 in cost.items():
+        for key2, value2 in cities[key1].items():
+            if key2 != "AQI" and key2 != "Pollen":
+                if airQuality(person, cities[key1]["AQI"], cities[key1]["Pollen"]) != 0:
+                    del c[key1][key2]
+                    
     #Initialize a queue to keep track of the cities that need to be processed and costs calculated for
     q = Queue(maxsize = 0)
     q.put(source)
