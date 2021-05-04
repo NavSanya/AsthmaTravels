@@ -1,14 +1,12 @@
-from queue import Queue
-from datetime import datetime
+import config
 import random
 import requests
+from queue import Queue
 from datetime import datetime
 from geopy.geocoders import Nominatim
 from copy import deepcopy
 
-
-# Should be hidden
-open_weather_key = 'debe00cc9953a4e09636a2e3e393929a'
+open_weather_key = config.apiKey
 
 places = {1:"San Diego",
     2:"Palm Springs",
