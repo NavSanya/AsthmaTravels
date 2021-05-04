@@ -1,4 +1,5 @@
 import requests
+import config
 from datetime import datetime
 from geopy.geocoders import Nominatim
 
@@ -11,7 +12,7 @@ print('The Latitude is -> ', lattitude)
 print('The Longitude is -> ', longitude)
 
 # Should be hidden
-open_weather_key = 'debe00cc9953a4e09636a2e3e393929a'
+open_weather_key = config.apiKey
 # # Air Quality Index. Possible values: 1, 2, 3, 4, 5. 
 # # 1 = Good, 
 # # 2 = Fair, 
