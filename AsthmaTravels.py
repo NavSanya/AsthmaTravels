@@ -1,6 +1,12 @@
 from queue import Queue
 from datetime import datetime
 import random
+import requests
+from datetime import datetime
+from geopy.geocoders import Nominatim
+
+# Should be hidden
+open_weather_key = 'debe00cc9953a4e09636a2e3e393929a'
 
 places = {1:"San Diego",
     2:"Palm Springs",
@@ -54,21 +60,37 @@ class Patient:
 class Graph:
     def __init__(self):
         random.seed()
-        self.G={"San Diego":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Palm Springs":133,"Los Angeles":120},
-           "Palm Springs":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Los Angeles":107, "San Diego":133},
-           "Los Angeles":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Santa Barbara":96, "Bakersfield":112, "San Diego":120},
-           "Santa Barbara":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"San Luis Obispo":95, "Los Angeles":96},
-           "Bakersfield":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Fresno":109, "Los Angeles":112},
-           "San Luis Obispo":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Monterey":141, "San Jose":185, "Santa Barbara":95},
-           "Fresno":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Sacramento":169,"Bakersfield":109},
-           "Monterey":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"San Jose":73, "San Luis Obispo":141},
-           "San Jose":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Oakland":41, "San Francisco":48, "Monterey":73, "San Luis Obispo":185},
-           "Sacramento":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":62, "Redding":160, "Fresno":169},
-           "Oakland":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":42, "San Jose":41},
-           "San Francisco":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Napa":52, "San Jose":48},
-           "Napa":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Eureka":252, "Sacramento":62, "Oakland":42, "San Francisco":52},
-           "Eureka":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Redding":147, "Napa":252},
-           "Redding":{"AQI":random.randrange(0, 350),"Pollen":random.randrange(0, 100) / 10,"Eureka":147, "Sacramento":160}}
+        self.G={"San Diego":{"AQI": self.aqiData("San Diego")[0],"Pollen":self.aqiData("San Diego")[1],"Palm Springs":133,"Los Angeles":120},
+           "Palm Springs":{"AQI":self.aqiData("Palm Springs")[0],"Pollen":self.aqiData("Palm Springs")[1],"Los Angeles":107, "San Diego":133},
+           "Los Angeles":{"AQI":self.aqiData("Los Angeles")[0],"Pollen":self.aqiData("Los Angeles")[1],"Santa Barbara":96, "Bakersfield":112, "San Diego":120},
+           "Santa Barbara":{"AQI":self.aqiData("Santa Barbara")[0],"Pollen":self.aqiData("Santa Barbara")[1],"San Luis Obispo":95, "Los Angeles":96},
+           "Bakersfield":{"AQI":self.aqiData("Bakersfield")[0],"Pollen":self.aqiData("Bakersfield")[1],"Fresno":109, "Los Angeles":112},
+           "San Luis Obispo":{"AQI":self.aqiData("San Luis Obispo")[0],"Pollen":self.aqiData("San Luis Obispo")[1],"Monterey":141, "San Jose":185, "Santa Barbara":95},
+           "Fresno":{"AQI":self.aqiData("Fresno")[0],"Pollen":self.aqiData("Fresno")[1],"Sacramento":169,"Bakersfield":109},
+           "Monterey":{"AQI":self.aqiData("Monterey")[0],"Pollen":self.aqiData("Monterey")[1],"San Jose":73, "San Luis Obispo":141},
+           "San Jose":{"AQI":self.aqiData("San Jose")[0],"Pollen":self.aqiData("San Jose")[1],"Oakland":41, "San Francisco":48, "Monterey":73, "San Luis Obispo":185},
+           "Sacramento":{"AQI":self.aqiData("Sacramento")[0],"Pollen":self.aqiData("Sacramento")[1],"Napa":62, "Redding":160, "Fresno":169},
+           "Oakland":{"AQI":self.aqiData("Oakland")[0],"Pollen":self.aqiData("Oakland")[1],"Napa":42, "San Jose":41},
+           "San Francisco":{"AQI":self.aqiData("San Francisco")[0],"Pollen":self.aqiData("San Francisco")[1],"Napa":52, "San Jose":48},
+           "Napa":{"AQI":self.aqiData("Napa")[0],"Pollen":self.aqiData("Napa")[1],"Eureka":252, "Sacramento":62, "Oakland":42, "San Francisco":52},
+           "Eureka":{"AQI":self.aqiData("Eureka")[0],"Pollen":self.aqiData("Eureka")[1],"Redding":147, "Napa":252},
+           "Redding":{"AQI":self.aqiData("Redding")[0],"Pollen":self.aqiData("Redding")[1],"Eureka":147, "Sacramento":160}}
+    
+    def aqiData(self, city):
+        # Implementing API to get geolocation
+        loc = city
+        geolocation = Nominatim(user_agent="asthmaTravels")  # Making an instance of Nominatim class
+        locInfo = geolocation.geocode(loc)
+        locLat = locInfo.latitude
+        locLong = locInfo.longitude
+
+        ow_link = 'http://api.openweathermap.org/data/2.5/air_pollution?lat='+str(locLat)+'&lon='+str(locLong)+'&appid='+open_weather_key
+
+        api_link = requests.get(ow_link)
+        api_data = api_link.json()
+        airQual = api_data['list'][0]['main']['aqi']
+        partMatt = api_data['list'][0]['components']['pm2_5']
+        return airQual, partMatt
 
 #runs program with random inputs for locations and patient info
 def test():
@@ -300,7 +322,7 @@ class AsthmaTrip():
             if safety == 0:
                 print("The air quality in " + city + " is just fine today.")
             elif safety == -1:
-                print("The pollen count in " + city + " is notably high today at a level of " + str(self.g.G[city]["Pollen"]) + ".")
+                print("The Particle Matter 2.5 in " + city + " is notably high today at a level of " + str(self.g.G[city]["Pollen"]) + ".")
             elif safety == -2:
                 print("The AQI in " + city + " is notably high today at a level of " + str(self.g.G[city]["AQI"]) + ".")
             elif safety == -3:
