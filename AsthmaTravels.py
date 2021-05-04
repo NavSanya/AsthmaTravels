@@ -281,17 +281,17 @@ safetyCheck.__doc__
 
 def airQuality(person, AQI, pollen):
     #If the pollen or AQI counts are above these levels, the air isn't safe regardless of sensitivity
-    danger = safetyCheck(person.AQIsensitive, person.PollenSensitive, 300, 300, 9.7, 9.7, AQI, pollen)
+    danger = safetyCheck(person.AQIsensitive, person.PollenSensitive, 301, 301, 250.5, 250.5, AQI, pollen)
     if danger < 0:
         return danger
     elif person.degreeOfSensitivity == 1:
-        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 200, 300, 7.2, 9.7, AQI, pollen)
+        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 201, 300, 150.5, 250.4, AQI, pollen)
     elif person.degreeOfSensitivity == 2:
-        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 150, 200, 4.8, 7.2, AQI, pollen)
+        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 151, 200, 55.5, 150.4, AQI, pollen)
     elif person.degreeOfSensitivity == 3:
-        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 100, 150, 2.4, 4.8, AQI, pollen)
+        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 101, 150, 35.5, 55.4, AQI, pollen)
     elif person.degreeOfSensitivity == 4:
-        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 50, 100, 0, 2.4, AQI, pollen)
+        return safetyCheck(person.AQIsensitive, person.PollenSensitive, 51, 100, 12.1, 35.4, AQI, pollen)
 
 class AsthmaTrip():
     """ Initializes values with user input and finds best path """
@@ -364,7 +364,7 @@ class AsthmaTrip():
             AQIsensitive = False
 
         #get pollen sensitivity
-        Pollen = input('Are they sensitive to high pollen counts? (Y/N) ')
+        Pollen = input('Are they sensitive to higher levels of Particulate Matter (PM2.5)? (Y/N) ')
         if (AQI == 'Y' or AQI == 'y'):
             PollenSensitive = True
         else:
