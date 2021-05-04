@@ -364,8 +364,8 @@ class AsthmaTrip():
             AQIsensitive = False
 
         #get pollen sensitivity
-        Pollen = input('Are they sensitive to higher levels of Particulate Matter (PM2.5)? (Y/N) ')
-        if (AQI == 'Y' or AQI == 'y'):
+        PM = input('Are they sensitive to higher levels of Particulate Matter (PM2.5)? (Y/N) ')
+        if (PM == 'Y' or PM == 'y'):
             PollenSensitive = True
         else:
             PollenSensitive = False
