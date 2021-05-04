@@ -25,29 +25,37 @@ This is a group project done for the class CSci 154: Simulations
 
 <!-- LICENSE -->
 ## License
-None
+MIT License
 
 <!-- Contributions -->
 ## Contributions
 
 Kyle Kilcrease:
+  - Python Programming
+    * Research and implement the shortest path
+    * Examined possible future goals for the project
+  - Finalised the code  
 
 Nav Sanya Anand:
   - Researched and setup the constraints and variables
   - Finalize the Paper
   - Python Programming
-    * Set up the graph 
+    * Set up the graph
     * Add Docsign
   - Managing and proving structure to the team
 
 Eric Smrkovsky:  
+  - Licensed software
   - Researched data sets and API's  
   - Created ReadMe File  
     * Used HTML
   - Python Programming
     * Created user interface
+  - Created live demo
 
 Israel Perez:
+  - Python Programming
+    * Implemented API
 
 
 <!-- CONTACT -->
@@ -66,7 +74,7 @@ Israel Perez - (iperez17@mail.fresnostate.edu) - email
 
 Project Link: [Asthma Travels Github](https://github.com/NavSanya/AsthmaTravels)  
 Report: []()
-Presentation: [Asthma Travels Presentation](https://www.canva.com/design/DAEbnFlKmKg/BFsUcr_e9QXy5_-W7Wssuw/view?utm_content=DAEbnFlKmKg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+Presentation: [Asthma Travels Presentation](https://www.canva.com/design/DAEbnFlKmKg/kMN2j9xyyhvY3g6JE0sljQ/edit)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
