@@ -73,7 +73,7 @@ Israel Perez - (iperez17@mail.fresnostate.edu) - email
 ## Links
 
 Project Link: [Asthma Travels Github](https://github.com/NavSanya/AsthmaTravels)  
-Report: []()
+Report: [Asthma Travels Paper](https://drive.google.com/file/d/1Xq71nmw41uSiu_T0WkxwucQ9S6Ro7O94/view?usp=sharing)
 Presentation: [Asthma Travels Presentation](https://www.canva.com/design/DAEbnFlKmKg/kMN2j9xyyhvY3g6JE0sljQ/edit)
 
 <!-- ACKNOWLEDGEMENTS -->
